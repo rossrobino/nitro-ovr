@@ -5,7 +5,7 @@ import { assetsPlugin } from "@hiogawa/vite-plugin-fullstack";
 export default defineConfig({
 	plugins: [patchAssets(assetsPlugin()), nitro()],
 	nitro: {
-		preset: "standard",
+		preset: "vercel",
 	},
 	environments: {
 		client: {
