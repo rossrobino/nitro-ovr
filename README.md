@@ -1,6 +1,8 @@
-# Nitro starter with Vite
+# Nitro + ovr
 
-Create your full-stack apps and deploy it anywhere with this [Vite](https://vite.dev/) + [Nitro](https://v3.nitro.build/) starter.
+[nitro-ovr.vercel.app](https://nitro-ovr.vercel.app)
+
+[Vite](https://vite.dev/) + [Nitro](https://v3.nitro.build/) + [ovr](https://ovr.robino.dev)
 
 ## Getting started
 
