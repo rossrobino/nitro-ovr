@@ -1,0 +1,35 @@
+@import "uico";
+
+@layer base {
+	:root {
+		font-family: var(--font-family-mono);
+	}
+
+	main {
+		padding: var(--size-6);
+	}
+}
+
+@layer components {
+	.products {
+		display: grid;
+		gap: var(--size-4);
+
+		@media (min-width: 640px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.product {
+		border: var(--border);
+		padding: var(--size-4);
+		border-radius: var(--border-radius);
+		display: flex;
+		gap: var(--size-4);
+		justify-content: space-between;
+	}
+}

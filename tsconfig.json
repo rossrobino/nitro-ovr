@@ -1,0 +1,28 @@
+{
+	"compilerOptions": {
+		// Module resolution
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+
+		// JSX
+		"jsx": "react-jsx",
+		"jsxImportSource": "ovr",
+
+		// Core checks
+		"strict": true,
+		"noEmit": true,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+
+		// Additional safety
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"useUnknownInCatchVariables": true,
+		"noUnusedLocals": true,
+
+		"types": ["@hiogawa/vite-plugin-fullstack/types"]
+	}
+}
