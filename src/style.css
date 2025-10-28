@@ -3,6 +3,7 @@
 @layer base {
 	:root {
 		font-family: var(--font-family-mono);
+		scrollbar-gutter: stable;
 	}
 
 	main {
