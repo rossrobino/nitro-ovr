@@ -1,5 +1,5 @@
 import { Get, Post } from "ovr";
-import assets from "./entry-client?assets";
+import assets from "./entry-client?assets=client";
 
 export const products = new Get("/", () => {
 	return (
