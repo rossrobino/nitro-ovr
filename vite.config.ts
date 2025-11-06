@@ -1,9 +1,10 @@
-import { defineConfig, type Plugin, type ViteBuilder } from "vite";
+import { defineConfig } from "vite";
 import { nitro } from "nitro/vite";
-import { assetsPlugin } from "@hiogawa/vite-plugin-fullstack";
 
 export default defineConfig({
-	plugins: [patchAssets(assetsPlugin()), nitro()],
+	plugins: [
+		nitro({ experimental: { assetsImport: true, serverReload: true } }),
+	],
 	nitro: {
 		preset: "vercel",
 	},
@@ -21,19 +22,3 @@ export default defineConfig({
 		},
 	},
 });
-
-function patchAssets(plugin: Plugin[]) {
-	const assetsPlugin = plugin.find((p) => p.name === "fullstack:assets")!;
-
-	const { handler } = assetsPlugin.buildApp as {
-		handler: (builder: ViteBuilder) => any;
-	};
-
-	assetsPlugin.buildApp = async (builder) => {
-		await builder.build(builder.environments.client);
-		await builder.build(builder.environments.ssr);
-		await handler(builder);
-	};
-
-	return plugin;
-}

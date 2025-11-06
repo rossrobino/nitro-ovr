@@ -9,13 +9,13 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@hiogawa/vite-plugin-fullstack": "^0.0.3",
+		"@hiogawa/vite-plugin-fullstack": "^0.0.5",
 		"nitro": "npm:nitro-nightly@latest",
 		"prettier": "^3.6.2",
-		"vite": "^7.1.10"
+		"vite": "^7.2.0"
 	},
 	"dependencies": {
-		"ovr": "^4.6.0",
+		"ovr": "^5.0.0",
 		"uico": "^0.10.3"
 	}
 }
