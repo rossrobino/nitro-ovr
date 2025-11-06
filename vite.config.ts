@@ -3,11 +3,11 @@ import { nitro } from "nitro/vite";
 
 export default defineConfig({
 	plugins: [
-		nitro({ experimental: { assetsImport: true, serverReload: true } }),
+		nitro({
+			experimental: { vite: { assetsImport: true, serverReload: true } },
+			preset: "vercel",
+		}),
 	],
-	nitro: {
-		preset: "vercel",
-	},
 	environments: {
 		client: {
 			build: {
