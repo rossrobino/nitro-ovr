@@ -2,7 +2,7 @@
 
 [nitro-ovr.vercel.app](https://nitro-ovr.vercel.app)
 
-[Vite](https://vite.dev/) + [Nitro](https://v3.nitro.build/) + [ovr](https://ovr.robino.dev)
+[Vite](https://vite.dev/) + [Nitro](https://v3.nitro.build/) + [ovr](https://ovrjs.com)
 
 ## Getting started
 

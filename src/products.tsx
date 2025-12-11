@@ -1,7 +1,7 @@
-import { Get, Post } from "ovr";
+import { Route, JSX } from "ovr";
 import assets from "./entry-client?assets=client";
 
-export const products = new Get("/", () => {
+const Layout = (props: { children: JSX.Element }) => {
 	return (
 		<html>
 			<head>
@@ -17,44 +17,53 @@ export const products = new Get("/", () => {
 				))}
 			</head>
 			<body>
-				<main>
-					<section class="prose">
-						<h1>Store</h1>
-						<p>
-							This is a mock storefront built with{" "}
-							<a href="https://v3.nitro.dev">Nitro</a> +{" "}
-							<a href="https://ovr.robino.dev">ovr</a>.
-						</p>
-						<p>
-							<products.Anchor>Refresh</products.Anchor>
-						</p>
-					</section>
-
-					<section>
-						<form>
-							<Products />
-						</form>
-					</section>
-				</main>
+				<main>{props.children}</main>
 			</body>
 		</html>
 	);
+};
+
+export const products = Route.get("/", () => {
+	return (
+		<Layout>
+			<section class="prose">
+				<h1>Store</h1>
+				<p>
+					This is a mock storefront built with{" "}
+					<a href="https://v3.nitro.dev">Nitro</a> +{" "}
+					<a href="https://ovr.robino.dev">ovr</a>.
+				</p>
+				<p>
+					<products.Anchor>Refresh</products.Anchor>
+				</p>
+			</section>
+
+			<section>
+				<form>
+					<Products />
+				</form>
+			</section>
+		</Layout>
+	);
 });
 
-export const buy = new Post("/buy/:id", async (c) => {
+export const buy = Route.post("/buy/:id", async (c) => {
 	await delay();
 
+	console.log(c.params);
 	c.redirect(success.pathname(c.params), 303);
 });
 
-export const success = new Get("/product/:id", (c) => (
-	<main>
-		<section class="prose">
-			<h1>Thank you!</h1>
-			<p>Product {c.params.id} is on its way!</p>
-		</section>
-	</main>
-));
+export const success = Route.get("/product/:id", (c) => {
+	return (
+		<Layout>
+			<section class="prose">
+				<h1>Thank you!</h1>
+				<p>Product {c.params.id} is on its way!</p>
+			</section>
+		</Layout>
+	);
+});
 
 const Products = () => (
 	<ul class="products">

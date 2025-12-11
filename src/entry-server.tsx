@@ -3,6 +3,6 @@ import * as products from "./products";
 
 const app = new App();
 
-app.add(products);
+app.use(products);
 
 export default app;

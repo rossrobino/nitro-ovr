@@ -11,11 +11,11 @@
 	"devDependencies": {
 		"@hiogawa/vite-plugin-fullstack": "^0.0.5",
 		"nitro": "npm:nitro-nightly@latest",
-		"prettier": "^3.6.2",
-		"vite": "^7.2.0"
+		"prettier": "^3.7.4",
+		"vite": "^7.2.7"
 	},
 	"dependencies": {
-		"ovr": "^5.0.0",
+		"ovr": "^6.0.0",
 		"uico": "^0.10.3"
 	}
 }
