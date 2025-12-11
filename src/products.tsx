@@ -50,7 +50,6 @@ export const products = Route.get("/", () => {
 export const buy = Route.post("/buy/:id", async (c) => {
 	await delay();
 
-	console.log(c.params);
 	c.redirect(success.pathname(c.params), 303);
 });
 
